@@ -5,10 +5,16 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node index.js"
     
        
   },
+=======
+    "start": "node server.js",
+    "dev": "nodemon server.js"      
+   },
+>>>>>>> 1df99adf8c786d7f0c5cd7586ad611e255e3414d
   "keywords": [],
   "author": "",
   "license": "ISC",
