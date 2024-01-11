@@ -8,7 +8,7 @@ export default defineConfig({
     port:3000,
     proxy:{
       '/api':{
-        target:'e-learning-pxb7.vercel.app',
+        target:'e-learning-backend-iota.vercel.app',
         changeOrigin:true,
       },
     },
