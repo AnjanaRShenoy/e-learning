@@ -20,6 +20,7 @@ import Home from "./screens/Student/Home.jsx";
 import CourseList from "./screens/Student/CourseList.jsx";
 import CourseDetails from "./screens/Student/CourseDetails.jsx";
 import EnrolledCourses from "./screens/Student/EnrolledCourses.jsx";
+import Profile from "./screens/Student/Profile.jsx";
 
 import LoginAdminScreen from "./screens/Admin/LoginScreen.jsx";
 import HomeAdminScreen from "./screens/Admin/HomeAdminScreen.jsx";
@@ -39,6 +40,7 @@ const router = createBrowserRouter(
         <Route path="/courseDetails/:postId" element={<CourseDetails />} />
         <Route path="/enrolledList" element={<EnrolledCourses />} />
         <Route path="/startCourse" element={<Course />} />
+        <Route path="/profile" element={<Profile />} />
       </Route>
       <Route path="/admin/login" element={<LoginAdminScreen />} />
       <Route path="/" element={<App admin={true} />}>

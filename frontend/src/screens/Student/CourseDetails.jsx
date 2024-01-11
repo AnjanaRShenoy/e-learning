@@ -32,7 +32,7 @@ function CourseDetails() {
       });
       console.log(res.data);
       setPost(res.data.course);
-      setEnrollment(res.data.enrol);
+      setEnrollment(res.data.enroll);
     } catch (err) {
       console.log(err);
     }
@@ -42,10 +42,10 @@ function CourseDetails() {
   }, []);
  
 
-  const [enrolCourse] = useEnrolMutation();
-  const enrol = async () => {
+  const [enrollCourse] = useEnrolMutation();
+  const enroll = async () => {
     try {
-      const res = await enrolCourse({ userInfo, postId }).unwrap();
+      const res = await enrollCourse({ userInfo, postId }).unwrap();
       fetchData()
       
     } catch (err) {
@@ -86,7 +86,7 @@ function CourseDetails() {
           class="btn btn-primary"
           type="submit"
           style={{ marginTop: "30px" }}
-          onClick={enrol}
+          onClick={enroll}
         >
           Enrolled
         </Button>
@@ -95,7 +95,7 @@ function CourseDetails() {
           class="btn btn-primary"
           type="submit"
           style={{ marginTop: "30px" }}
-          onClick={enrol}
+          onClick={enroll}
         >
           Enrol
         </Button>

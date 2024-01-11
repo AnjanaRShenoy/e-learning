@@ -114,28 +114,28 @@ const getFullDetails = asyncHandler(async (req, res) => {
   try {
 
     const course = await Course.findOne({ _id: req.query._id })
-    const enrol = await Enrol.findOne({ studentId: req.query.userInfo._id, course: req.query._id })
+    const enroll = await Enrol.findOne({ studentId: req.query.userInfo._id, course: req.query._id })
 
-    res.status(200).json({ course, enrol })
+    res.status(200).json({ course, enroll })
   } catch (err) {
     console.log(err);
   }
 })
 
-const enrol = asyncHandler(async (req, res) => {
+const enroll = asyncHandler(async (req, res) => {
 
   try {
 
-    const enrolExist = await Enrol.findOne({
+    const enrollExist = await Enrol.findOne({
       studentId: req.body.userInfo._id,
       course: req.body.postId
     })
-    if (enrolExist) {
+    if (enrollExist) {
       const course = await Enrol.findOneAndDelete({
         studentId: req.body.userInfo._id,
         course: req.body.postId
       })
-      const enrol = await Course.findOneAndUpdate({
+      const enroll = await Course.findOneAndUpdate({
         _id: req.body.postId
       }, { $inc: { enrollment: -1 } },
         { new: true })
@@ -145,7 +145,7 @@ const enrol = asyncHandler(async (req, res) => {
         studentId: req.body.userInfo._id,
         course: req.body.postId
       })
-      const enrol = await Course.findOneAndUpdate({
+      const enroll = await Course.findOneAndUpdate({
         _id: req.body.postId
       }, { $inc: { enrollment: 1 } },
         { new: true })
@@ -190,6 +190,36 @@ if(req.body.params)
   }
 })
 
+const getProfile=asyncHandler(async(req,res)=>{
+  try{
+    const user= await User.findOne({_id:req.query._id})
+    res.status(200).json(user)
+  }catch(err){
+    console.log(err);
+  }
+})
+
+const updateProfile=asyncHandler(async(req,res)=>{
+  try{
+    
+    const user = await User.findOne({ _id: req.body.params.userInfo._id });
+  
+    if (user) {
+      user.name = req.body.params.name 
+      User.email = req.body.params.email 
+      
+     
+      const updatedUser = await user.save();
+      res.status(200).json("successful");
+    } else {
+      res.status(404);
+      throw new Error("User not found");
+    }
+  }catch(err){
+    console.log(err);
+  }
+})
+
 export {
   authUser,
   registerUser,
@@ -197,7 +227,9 @@ export {
   getCourse,
   detailPage,
   getFullDetails,
-  enrol,
+  enroll,
   getEnrolledList,
   startCourse,
+  getProfile,
+  updateProfile,
 };

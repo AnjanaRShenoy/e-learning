@@ -77,7 +77,7 @@ const HomeAdminScreen = () => {
         </MDBRow>
 
         <Menu>
-          <MenuButton as={Button}>Actions</MenuButton>
+          <MenuButton style={{marginBottom:"30px"}} as={Button}>Category</MenuButton>
           <MenuList>
             {list
               ? list.map((course) => <MenuItem style={{color:"black"}} onClick={() => handleCategory(course.categoryName)}>{course.categoryName}</MenuItem>)

@@ -4,21 +4,20 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Course = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const time = new Date();
   time.setSeconds(time.getSeconds() + 600);
+  const { postId } = useParams();
 
   const navigate = useNavigate();
   
   const leave = async () => {
-    var flag
+  
     try {
-      const res = await axios.post(`/api/student/startCourse`, {
-        userInfo: userInfo,
-        
-      });
+      
       navigate("/enrolledList");
     } catch (err) {
       console.log(err);

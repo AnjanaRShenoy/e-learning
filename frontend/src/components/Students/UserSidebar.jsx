@@ -26,7 +26,7 @@ const LinkItems = [
   { name: "Enroll course", icon: FaUsers, url: "/" },
   { name: "Courses", icon: CiSignpostDuo1, url: "/course" },
   { name: "Enrolled Courses", icon: FaRegComment, url: "/enrolledList" },
-  // { name: "Settings", icon: FiSettings, url: "/admin/" },
+  { name: "Profile", icon: FiSettings, url: "/profile" },
 ];
 
 export default function UserSidebar() {

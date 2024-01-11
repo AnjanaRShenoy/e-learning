@@ -29,20 +29,21 @@ export const userAdminApiSlice = apiSlice.injectEndpoints({
 
     enrol: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}/enrol`,
+        url: `${USERS_URL}/enroll`,
         method: "POST",
         body: data,
       }),
     }),
 
     
-    // updateUser: builder.mutation({
-    //   query: (data) => ({
-    //     url: `${USERS_URL}/profile`,
-    //     method: "PUT",
-    //     body: data,
-    //   }),
-    // }),
+    updateUser: builder.mutation({
+      query: (data) => ({
+        url: `/api/student/updateProfile`,
+        method: "POST",
+        body: data,
+      }),
+    }),
+
     // updateProfileImage: builder.mutation({
     //   query: (data) => ({
     //     url: `${USERS_URL}/profile-updateImage`,
@@ -107,5 +108,6 @@ export const {
   useLogoutMutation,
   useRegisterMutation,
   useEnrolMutation,
+  useUpdateUserMutation,
   
 } = userAdminApiSlice;

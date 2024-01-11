@@ -46,10 +46,10 @@ const EnrolledCourses = () => {
     }
   };
 
-  const [enrolCourse] = useEnrolMutation();
-  const enrol = async (postId) => {
+  const [enrollCourse] = useEnrolMutation();
+  const enroll = async (postId) => {
     try {
-      const res = await enrolCourse({ userInfo, postId }).unwrap();
+      const res = await enrollCourse({ userInfo, postId }).unwrap();
       fetchData()
       
     } catch (err) {
@@ -67,7 +67,7 @@ const EnrolledCourses = () => {
               userInfo: userInfo,
             },
           });
-          navigate("/startCourse")
+          navigate(`/startCourse?postId=${postId}`)
     } catch (err) {
       console.log(err);
     }
@@ -120,10 +120,10 @@ const EnrolledCourses = () => {
                     <Button
                       variant="solid"
                       colorScheme="blue"
-                      onClick={() => enrol(course.course._id)}
+                      onClick={() => enroll(course.course._id)}
                       style={{ marginRight: "4px" }}
                     >
-                      Unenrol
+                      Unenroll
                     </Button>
                     <Button
                       variant="solid"

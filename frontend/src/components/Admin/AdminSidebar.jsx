@@ -26,8 +26,8 @@ const LinkItems = [
   { name: "Add Course", icon: FaUsers, url: "/admin/" },
   { name: "Add Category", icon: FaUsers, url: "/admin/category" },
   { name: "Course List", icon: CiSignpostDuo1, url: "/admin/courseList" },
-  { name: " Management", icon: FaRegComment, url: "/admin/commentManagement" },
-  // { name: "Settings", icon: FiSettings, url: "/admin/" },
+
+
 ];
 
 export default function AdminSidebar() {

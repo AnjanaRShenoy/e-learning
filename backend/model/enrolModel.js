@@ -14,7 +14,7 @@ const EnrolSchema = mongoose.Schema(
         },
         status:{
             type: String,
-            required: true,
+            
             
         },
         createdAt: {

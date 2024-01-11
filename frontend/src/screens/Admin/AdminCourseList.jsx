@@ -48,7 +48,8 @@ import {
             <Thead>
               <Tr>
                 <Th  style={{ width: '20%' }}>Name</Th>
-                <Th  style={{ width: '10%' }}>Duration</Th>
+                <Th  style={{ width: '10%' }}>Date</Th>
+                <Th  style={{ width: '10%' }}>Time</Th>
                 <Th  style={{  maxWidth: '30px' }}>Description</Th>
                 <Th  style={{ width: '10%' }}>No. of Enrollment</Th>
               </Tr>
@@ -58,9 +59,10 @@ import {
                 ? list.map((course) => (
                     <Tr>
                       <Td>{course.courseName}</Td>
-                      <Td>{course.duration}hr</Td>
+                      <Td>{new Date(course.date).toLocaleDateString("en-GB")}</Td>
+                      <Td>{course.time}</Td>
                       <Td style={{ textOverflow:"ellipsis",whiteSpace:"nowrap",overflow: "hidden", maxWidth: '30px' }}>{course.description}</Td>
-                      <Td>{course.enrolled}</Td>
+                      <Td>{course.enrollment}</Td>
                       
   
                       {/* <Td>
