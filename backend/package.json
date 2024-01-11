@@ -3,16 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-<<<<<<< HEAD
-    "dev": "nodemon server.js",
-    "build":"node server.js"    
-=======
-    "dev": "nodemon server.js"
-      
->>>>>>> a20f2499cd4365d95f97b6aafbbcfc6870775487
+    "start": "node index.js"
+    
+       
   },
   "keywords": [],
   "author": "",
